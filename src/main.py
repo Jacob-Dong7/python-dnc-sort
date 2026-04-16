@@ -1,9 +1,11 @@
 from mergesort import msort
 from bubblesort import bsort
+from quicksort import quicksort
 import time
 def main():
     bubble_sort = bsort()
     merge_sort = msort()
+    quick_sort = quicksort()
     while True:
         menu()
 
@@ -18,8 +20,17 @@ def main():
             if arr == -1:
                  continue
             bubble_sort.sort(arr)
+        elif user_input == "5":
 
-        elif user_input == "2":
+            arr = quick_sort.start()
+            if arr == -1:
+                continue
+            quick_sort.sort(arr)
+            
+
+            
+
+        elif user_input == "4":
 
             arr = merge_sort.start()
             if arr == -1:
@@ -31,6 +42,12 @@ def main():
 
     return
 
+def array_check(arr):
+    if arr == "-1":
+        return False
+    else:
+        return True
+    
 def menu():
     print("\n" + "="*40)
     print("        SORTING MENU")
