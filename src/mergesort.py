@@ -5,9 +5,8 @@ class msort(Sort):
         self.time_taken = 0
         return
     
-    def start(self):
-        
-
+    def sort(self, arr):
+        return
     
     def print(self, arr):
         print("="*40)

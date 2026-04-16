@@ -3,6 +3,7 @@ from bubblesort import bsort
 import time
 def main():
     bubble_sort = bsort()
+    merge_sort = msort()
     while True:
         menu()
 
@@ -16,7 +17,11 @@ def main():
             if arr == -1:
                  continue
             bubble_sort.sort(arr)
-
+        elif user_input == "2":
+            arr = merge_sort.start()
+            if arr == -1:
+                continue
+            merge_sort.sort(arr)
     return
 
 def menu():
