@@ -1,4 +1,5 @@
 from sort import Sort
+import time
 class msort(Sort):
 
     def __init__(self):
@@ -18,6 +19,7 @@ class msort(Sort):
         left = self.sort(left)
         right = self.sort(right)
         result = self.merge(left, right, arr)
+
         return result
     
     def merge(self, left, right, arr):
@@ -48,12 +50,4 @@ class msort(Sort):
                 curr_left += 1
                 curr += 1
         return arr
-    
-    def print(self, arr):
-        print("="*40)
-        print("        MERGE SORT RESULT")
-        for item in arr:
-            print(item,end=" ")
-        print("="*40)
-        print(f"Time Taken = {self.time_taken} seconds\n")
-        print("Complexity = O(log(n))")
+

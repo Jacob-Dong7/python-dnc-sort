@@ -24,8 +24,11 @@ def main():
             arr = merge_sort.start()
             if arr == -1:
                 continue
-            merge_sort.sort(arr)
-            
+            start = time.time()
+            result = merge_sort.sort(arr)
+            end = time.time()
+            merge_sort.print(result, end - start, "O(log(n))")
+
     return
 
 def menu():
