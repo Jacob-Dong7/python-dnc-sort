@@ -13,15 +13,19 @@ def main():
             print("Quitting...")
             quit()
         elif user_input == "1":
+
             arr = bubble_sort.start()
             if arr == -1:
                  continue
             bubble_sort.sort(arr)
+
         elif user_input == "2":
+
             arr = merge_sort.start()
             if arr == -1:
                 continue
             merge_sort.sort(arr)
+            
     return
 
 def menu():
