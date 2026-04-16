@@ -1,10 +1,15 @@
 from sort import Sort
+import time
 class quicksort(Sort):
     def __init__(self):
         return
     
     def sort(self, array):
+        start = time.time()
         self.quick_sort(array, 0, len(array) - 1)
+        end = time.time()
+        self.print(array, end - start, "nlog(n)")
+
 
 
     def quick_sort(self, array, l, r):
@@ -20,28 +25,15 @@ class quicksort(Sort):
 
         while True:
             left += 1
-            while array[left] < pivot:
+            while array[left] < pivot and left < r:
                 left += 1
             right -= 1
             while array[right] > pivot:
                 right -= 1
-            temp = array[left]
-            array[left] = array[right]
-            array[right] = temp
             if left >= right:
-                temp = array[right]
-                array[right] = pivot
-                array[l] = temp
-                return right
-
-
-
-        temp = array[left]
-        array[left] = array[right]
-        array[right] = temp
-
-
-        return
+                break
+            array[left], array[right] = array[right], array[left]
+        array[l], array[right] = array[right], array[l]
+        return right
     
-    """2 5 1 3"""
-    5 < 2
+"""2 1 3"""
