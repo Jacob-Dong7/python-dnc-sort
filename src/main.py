@@ -1,11 +1,13 @@
 from mergesort import msort
 from bubblesort import bsort
 from quicksort import quicksort
+from selectionsort import selection_sort
 import time
 def main():
     bubble_sort = bsort()
     merge_sort = msort()
     quick_sort = quicksort()
+    select_sort = selection_sort()
     while True:
         menu()
 
@@ -14,22 +16,30 @@ def main():
         if user_input == "-1":
             print("Quitting...")
             quit()
+        #Bubble Sort
         elif user_input == "1":
 
             arr = bubble_sort.start()
             if arr == -1:
                  continue
             bubble_sort.sort(arr)
+        #Selection Sort
+        elif user_input == "2":
+            arr = select_sort.start()
+            if arr == "-1":
+                continue
+            select_sort.sort(arr)
+
+
+        #Quick Sort
         elif user_input == "5":
 
             arr = quick_sort.start()
             if arr == -1:
                 continue
             quick_sort.sort(arr)
-            
-
-            
-
+        
+        #Merge Sort
         elif user_input == "4":
 
             arr = merge_sort.start()
